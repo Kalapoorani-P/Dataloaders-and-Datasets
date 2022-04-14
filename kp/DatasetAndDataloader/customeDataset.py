@@ -42,7 +42,6 @@ class CustomeSampler(Sampler):
             shuffledIndexList = random.sample(range(len(self.dataset)),len(self.dataset))
            
             for i in shuffledIndexList :
-               
                 yield i
         else:
             print("Invalid SequenceType")
@@ -72,7 +71,6 @@ class CustomeBatchSampler:
 
 
 def  collate_fn(batch):
-    # print("collate",batch)
     image_list,label_list = [],[]
     for img,label in batch:
         image_list.append(img)
